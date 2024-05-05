@@ -23,7 +23,7 @@ class UserController extends AbstractController
     public function mainUser(Request $request, EntityManagerInterface $entityManager): Response
     {
 
-        $tableInfo = ['Nombre', 'Correo electrónico', 'Teléfono de contacto', 'Proveedor', 'Activo', 'Aciones'];
+        $tableInfo = ['Nombre', 'Correo electrónico', 'Teléfono de contacto', 'Proveedor', 'Activo', 'Acciones'];
         $user = new User();
 
         $form = self::generateForm($user, false);
