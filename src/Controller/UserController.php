@@ -119,13 +119,13 @@ class UserController extends AbstractController
         return $this->createFormBuilder($user)
         ->add('name', TextType::class, array('label' => 'Nombre'))
         ->add('email', EmailType::class, array('label' => 'Correo'))
-        ->add('tlf', TextType::class, array('label' => 'Telefono'))
+        ->add('tlf', TextType::class, array('label' => 'Teléfono'))
         ->add('proveer', ChoiceType::class, [
             'choices' => [
                 'Hotel' => 'Hotel',
                 'Pista' => 'Pista',
                 'Complemento' => 'Complemento'
-            ],'label' => 'Preoveedor'
+            ],'label' => 'Proveedor'
         ])
         ->add('active', ChoiceType::class, [
             'choices' => [
