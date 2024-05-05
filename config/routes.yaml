@@ -1,3 +1,17 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
+# config/routes.yaml
+
+app_lucky_number:
+    path: /
+    controller: App\Controller\UserController::mainUser
+
+app_edit_user:
+    path: /edit/{id}
+    controller: App\Controller\UserController::editUser
+
+app_delete_user:
+    path: /delete/{id}
+    controller: App\Controller\UserController::deleteUser
+
+app_view_user:
+    path: /view/{id}
+    controller: App\Controller\UserController::viewUser

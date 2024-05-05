@@ -1,0 +1,51 @@
+{% block head_css %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+{% endblock %}
+{% block head_js %}
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+{% endblock %}
+
+<style>
+.main {
+    padding: 50px;
+}
+.title{
+  font-size: 64px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.data{
+    display: flex;
+    justify-content: space-around;
+}
+.tag{
+    font-weight: bold;
+}
+.item {
+    padding: 10px;
+}
+</style>
+<div class="main">
+    <div class="topBar">
+        <a class="btn btn-primary" href="/" role="button">← Inicio</a>
+        <a class="btn btn-primary" href="/edit/{{user_data.id}}" role="button">✎ Editar</a>
+    </div>
+    <div class="title">Información Usuario</div>
+    <div class="data">
+        <div class="columna">
+            <div class="id item"><span class="tag">ID:</span> {{user_data.id}}</div>
+            <div class="name item"><span class="tag">Nombre:</span> {{user_data.name}}</div>
+            <div class="email item"><span class="tag">Email:</span> {{user_data.email}}</div>
+            <div class="tlf item"><span class="tag">Telefono:</span> {{user_data.tlf}}</div>
+        </div>
+        <div class="columna">
+            <div class="proveer item"><span class="tag">Proveedor:</span> {{user_data.proveer}}</div>
+            <div class="active item"><span class="tag">Activo:</span> {%if user_data.active == true %} Si {%else%} No {%endif%}</div>
+            <div class="create_date item"><span class="tag">Fecha Creacion:</span> {{user_data.createDate|date('Y-m-d H:i:s')}}</div>
+            <div class="edit_date item"><span class="tag">Fecha Edicion:</span> {{user_data.editDate|date('Y-m-d H:i:s')}}</div>
+        </div>
+    </div>
+</div>
